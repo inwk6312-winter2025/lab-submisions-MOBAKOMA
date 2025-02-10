@@ -1,6 +1,6 @@
 from jinja2 import Environment, FileSystemLoader
 ENV = Environment(loader=FileSystemLoader('.'))
-template = ENV.get_template("template-task2.j2")
+template = ENV.get_template("template-task4.j2")
 
 class NetworkInterface(object):
     def __init__(self, name, description, vlan, uplink=False):
