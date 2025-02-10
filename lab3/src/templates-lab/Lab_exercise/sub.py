@@ -38,7 +38,13 @@ routers = [
         }
     ]
 
-# Print the rendered template for each router
+# Generate and print configurations for each router 
 for router in routers:
-    print(template.render(router=router))
-    print("\n" + "="*20 + "\n")  # Separator for better readability
+    config = template.render(router)
+    print(f"\n{'='*20} {router['hostname']} Configuration {'='*20}\n")
+    print(config)
+
+# Save each router's config to a text file 
+with open(f"{router['hostname']}_config.txt", "w") as f:
+    f.write(config)
+
